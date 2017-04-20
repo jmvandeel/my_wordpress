@@ -1,0 +1,10 @@
+Coming Soon:
+This file will be updated with a complete list of filters and hooks soon.
+
+//Add desc to all products:
+function custom_add_desc_appip( $manual_array ){
+	if( is_array( $manual_array ) )
+		$manual_array['desc'] = 1;
+	return $manual_array;
+}
+add_filter('getSingleAmazonProduct_manual_array', 'custom_add_desc_appip');
