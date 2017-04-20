@@ -1,19 +1,4 @@
 Update Jenkins
+See https://docs.bitnami.com/azure/apps/jenkins/#upgrading-only-jenkins
 
-mv ~/apps/jenkins/jenkins_home/temp/jenkins.war ~/apps/jenkins/jenkins_home/
-chown tomcat:tomcat jenkins.war
-
-
-
-cd /tmp
-rm -f jenkins.war.backup
-cp /home/jmvandeel/apps/jenkins/jenkins_home/jenkins.war /tmp/jenkins.war.backup
-rm -f jenkins.war
-wget http://mirrors.jenkins-ci.org/war/latest/jenkins.war
-rm -f /home/jmvandeel/apps/jenkins/jenkins_home/jenkins.war
-cp /tmp/jenkins.war /home/jmvandeel/apps/jenkins/jenkins_home/jenkins.war
-chown tomcat:tomcat /home/jmvandeel/apps/jenkins/jenkins_home/jenkins.war
-
-
-
-nohup /usr/local/bin/copywar.sh > /tmp/copywar.out 2>&1 &
+Jenkins_Home /opt/bitnami/apps/jenkins/jenkins_home
