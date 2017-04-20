@@ -1,0 +1,8 @@
+<IfModule mod_headers.c>
+   Header set Access-Control-Allow-Origin "*"
+ </IfModule>
+<Directory "/about-me/">
+  AllowOverride All
+  Allow from All
+</Directory>
+response.addHeader("Access-Control-Allow-Origin", "*");
