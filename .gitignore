@@ -1,0 +1,4 @@
+wp-config.php
+*/cache/*
+*/debug.log
+*/error.log
