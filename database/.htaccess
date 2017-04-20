@@ -1,0 +1,23 @@
+ExpiresActive On
+ExpiresDefault A3600
+
+<IfModule mod_headers.c>
+    # 480 weeks
+	<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+	Header set Cache-Control "max-age=290304000, public"
+	</FilesMatch>
+	 
+	# 2 DAYS
+	<FilesMatch "\.(xml|txt)$">
+	Header set Cache-Control "max-age=172800, public, must-revalidate"
+	</FilesMatch>
+	 
+	# 2 HOURS
+	<FilesMatch "\.(html|htm)$">
+	Header set Cache-Control "max-age=7200, must-revalidate"
+	</FilesMatch>
+</IfModule>
+
+RewriteEngine on
+RewriteRule client\/([+.,0-9A-Za-z_-]+) /database/client.php?client=$1
+RewriteRule application\/([+.,0-9A-Za-z_-]+) /database/application.php?application=$1

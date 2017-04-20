@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="VANDEEL.COM - %title%"/>
+<title>VANDEEL.COM - %title%</title>
+<link rel="canonical" href="http://www.vandeel.com/database/client/%canonical%" />
+<link rel="stylesheet" href="style.css" media="all" />
+<link rel="stylesheet" href="/database/style.css" media="all" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="/database/freewall.js"></script>
+<script type="text/javascript" src="/database/readmore.min.js"></script>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51279316-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script>
+</head>
+<body>
+	<div id="container">
+
+		<div class="top-bar">
+			<div class="header">
+				<a href="/database/client/%client_name%">
+					<div class="image-wrapper">
+						<img src="%client_logo%" alt="%client_name%" class="image" width="110">
+					</div>
+				</a>
+				<div class="left-entity">
+					<div class="content-wrapper">
+						<h1 class="name"><span dir="ltr" itemprop="name">%client_name%</span></h1>
+						<p class="website"><a href="%client_website%">%client_website%</a></p>
+						<p class="industry">%client_industry%</p>
+						<p class="company-size">%client_employees%</p>
+					</div>
+				</div>
+				<div class="right-entity">
+					<div class="content-wrapper tags">
+						<ul class="tags">
+							%client_tags%
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-nav">
+				<ul>
+					<li class="active"><a href="/client/%client_name%">Home</a></li>
+					<li class=""><a href="/client/%client_name%">More</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="wrapper">
+			<div id="main">
+				<div id="content">
+					<div class="maincontent contentblock">
+						<h2>Introduction</h2>
+						%introduction%
+					</div>
+					<div class="maincontent contentblock">
+						<h2>Applications</h2>
+						<div class="application_clients">%client_applications%</div>
+					</div>
+					<div class="maincontent contentblock">
+						<h2>More information</h2>
+						%more_information%
+					</div>
+				</div>
+				<div id="extra" class="contentblock">
+					<h2>Unique Selling Points</h2>
+					%usp%
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
