@@ -1,0 +1,69 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+body{
+	color: #393833;
+    font: normal 14px/1.5 "Open Sans", Arial, sans-serif;
+}
+#main,
+#map {
+	height: 100%;
+}
+#top {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 50px !important;
+    height: 100px;
+    background-color: #666;
+    color: #fff;
+}
+#top_shadow {
+    background: url("img/top_edge_shadow.png") repeat-x scroll 0 0;
+    z-index: 1;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    top: 50px;
+}
+#right {
+    position: absolute;
+    right: 5px;
+    top: -24px;
+}
+
+div.infoWindow{
+	height: 40px;
+	padding-right: 10px;
+}
+.infoWindow h2,
+.infoWindow h3 {
+	font-size: 18px;
+	font-weight: 400;
+	margin: 0;
+	white-space: nowrap;
+}
+
+.infoWindow h4 {
+	font-size: 14px;
+	font-weight: 400;
+	margin: 0 0 10px 0;
+	white-space: nowrap;
+}
+.infoWindow p {
+	font-size: 12px;
+	font-weight: 400;
+	margin: 0 0 10px 0;
+	white-space: nowrap;
+}
+
+div.form-group input,
+div.form-group label,
+div.form-group button{
+	float: left;
+	line-height: 25px;
+	margin-left: 20px;
+}
