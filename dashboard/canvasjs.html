@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Report</title>
+    <link rel="stylesheet" href="report.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+	    window.onload = function () {
+	
+	var chart = new CanvasJS.Chart("budgetbar",
+    {
+      animationEnabled: true,
+      axisX: {     
+        interval: 0,
+        minimum: 0,
+        maximum: 0,
+        indexLabelFontSize: 50
+      },
+      axisY: {     
+        interval: 10000,
+        minimum: 0,
+        maximum: 105000,
+        valueFormatString: "€ #,###,###",
+        gridThickness: 0,
+        gridColor: "#ffffff",
+        tickLength: 3,
+        indexLabelFontSize: 50
+      },
+      data: [
+    	{        
+        type: "stackedBar",
+        name: "Verbruikt",
+        showInLegend: "false",
+        dataPoints: [
+	        { x:1, y: 27000, color: "#cc33bb", toolTipContent: "€ 30.000 Spent" }
+	        ]
+    	},
+        {        
+        type: "stackedBar",
+        name: "Prognose V",
+        showInLegend: "false",
+        dataPoints: [
+	        { x:1, y: 500, color: "#fc9935", toolTipContent: "€ 27.500 Prognose V" }
+	        ]
+    	},
+        {        
+        type: "stackedBar",
+        name: "Verbruikt",
+        showInLegend: "false",
+        dataPoints: [
+	        { x:1, y: 2500, color: "#cc33bb", toolTipContent: "€ 30.000 Spent" }
+	        ]
+    	},
+    	{        
+        type: "stackedBar",
+        name: "Budget",
+        showInLegend: "false",
+        dataPoints: [
+	        { x:1, y: 64500, color: "#EEEEEE", toolTipContent: "€ 100.000 Budget" }
+	        ]
+    	},
+    	{
+    	type: "stackedBar",
+        name: "Prognose T",
+        showInLegend: "false",
+        dataPoints: [
+	        { x:1, y: 500, color: "#999900", toolTipContent: "€ 95.000 Prognose" }
+	        ]
+    	},
+    	{        
+        type: "stackedBar",
+        name: "Budget",
+        showInLegend: "false",
+        dataPoints: [
+	        { x:1, y: 5000, color: "#EEEEEE", toolTipContent: "€ 100.000 Budget" }
+	        ]
+    	}
+      ]
+      ,
+      legend:{
+        cursor:"pointer",
+        itemclick:function(e) {
+          if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible){
+            e.dataSeries.visible = false;
+          }
+          else {
+            e.dataSeries.visible = true;
+          }
+          
+          chart.render();
+        }
+      }
+    });
+
+    chart.render();
+
+    var chart = new CanvasJS.Chart("budgetbar2",
+    {
+      animationEnabled: true,
+      axisX: {     
+        interval: 0,
+        minimum: 0,
+        maximum: 0,
+        indexLabelFontSize: 50
+      },
+      axisY: {     
+        interval: 10000,
+        minimum: 0,
+        maximum: 105000,
+        valueFormatString: "€ #,###,###",
+        gridThickness: 0,
+        gridColor: "#ffffff",
+        tickLength: 3,
+        indexLabelFontSize: 50
+      },
+      data: [
+    	{        
+        type: "stackedBar",
+        name: "Verbruikt",
+        showInLegend: "false",
+        dataPoints: [
+	        { x:1, y: 27000, color: "#cc33bb", toolTipContent: "€ 30.000 Spent" }
+	        ]
+    	},
+        {        
+        type: "stackedBar",
+        name: "Prognose V",
+        showInLegend: "false",
+        dataPoints: [
+	        { x:1, y: 500, color: "#fc9935", toolTipContent: "€ 27.500 Prognose V" }
+	        ]
+    	},
+        {        
+        type: "stackedBar",
+        name: "Verbruikt",
+        showInLegend: "false",
+        dataPoints: [
+	        { x:1, y: 2500, color: "#cc33bb", toolTipContent: "€ 30.000 Spent" }
+	        ]
+    	},
+    	{        
+        type: "stackedBar",
+        name: "Budget",
+        showInLegend: "false",
+        dataPoints: [
+	        { x:1, y: 64500, color: "#EEEEEE", toolTipContent: "€ 100.000 Budget" }
+	        ]
+    	},
+    	{
+    	type: "stackedBar",
+        name: "Prognose T",
+        showInLegend: "false",
+        dataPoints: [
+	        { x:1, y: 500, color: "#999900", toolTipContent: "€ 95.000 Prognose" }
+	        ]
+    	},
+    	{        
+        type: "stackedBar",
+        name: "Budget",
+        showInLegend: "false",
+        dataPoints: [
+	        { x:1, y: 5000, color: "#EEEEEE", toolTipContent: "€ 100.000 Budget" }
+	        ]
+    	}
+      ]
+      ,
+      legend:{
+        cursor:"pointer",
+        itemclick:function(e) {
+          if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible){
+            e.dataSeries.visible = false;
+          }
+          else {
+            e.dataSeries.visible = true;
+          }
+          
+          chart.render();
+        }
+      }
+    });
+
+    chart.render();
+}
+    </script>
+  </head>
+  <body>
+	<h2>Budget</h2>
+	<div id="budgetbar" style="height: 300px; width: 100%;"></div>
+	<div id="budgetbar2" style="height: 100px; width: 100%;"></div>
+
+  </body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Report</title>
+    <link href="//fonts.googleapis.com/css?family=News+Cycle|Droid+Serif:400,400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+    <link rel="stylesheet" href="report.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.js"></script>
+	<script src="report.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<div class="container" style="background-color:#ffffff; margin-bottom:50px;">
+
+		<div class="row">
+		    <div class="col-md-4">
+		    	<a class="logo" href="http://www.efocus.nl" title="Home">
+		            <img class="logo" src="http://www.efocus.nl/~/media/Images/Logo/logo-digitaal-bureau.ashx" alt="logo-digitaal-bureau">
+		        </a>
+		    </div>
+		    <div class="col-md-4">
+		    	<h1>PROJECTNAAM</h1>
+		    </div>
+		    <div class="col-md-4">
+		    	<br/><br/>PERIODE
+		    </div>
+		</div>
+		<div style="clear:both;"></div>
+
+		<div class="row">
+		    <div class="col-md-1">
+		    	<!-- SPACER -->
+		    </div>
+		    <div class="col-md-10">
+		    	<h2>Budget</h2>
+		    	<div id="budgetbar" style="height: 300px; width: 100%;"></div>
+		    </div>
+		    <div class="col-md-1">
+		    	<!-- SPACER -->
+		    </div>
+		</div>
+		<div style="clear:both;"></div>
+
+		<div class="row">
+		    <div class="col-md-1">
+		    	<!-- SPACER -->
+		    </div>
+		    <div class="col-md-5">
+		    	<p style="padding: 0 10px;"><span class="icon lightgray">&#9608;</span>Begroting totaal<span class="right">€ 100.000</span></p>
+		    	<p style="padding: 0 10px;"><span class="icon orange">&#9608;</span>Prognose T<span class="right">€ 95.000</span></p>
+		    	<p class="rounded green"><span class="icon white">&#9608;</span>Verschil<span class="right">€ 5.000</span></p>
+		    </div>
+		    <div class="col-md-5">
+		    	<p style="padding: 0 10px;"><span class="icon magenta">&#9608;</span>Verbruikt<span class="right">€ 30.000</span></p>
+		    	<p style="padding: 0 10px;"><span class="icon brown">&#9608;</span>Prognose V<span class="right">€ 27.500</span></p>
+		    	<p class="rounded red"><span class="icon white">&#9608;</span>Verschil<span class="right">€ 2.500</span></p>
+		    </div>
+		    <div class="col-md-1">
+		    	<!-- SPACER -->
+		    </div>
+		</div>
+		<div style="clear:both;"></div>
+
+
+		<h2>Risico</h2>
+		<div class="row">
+		    <div class="col-md-1">
+		    	<!-- SPACER -->
+		    </div>
+		    <div class="col-md-3">
+		    	<table width="100%" class="">
+		    		<tr>
+		    			<td width="50%">Score</td>
+		    			<td width="50%">Verschil</td>
+		    		</tr>
+		    		<tr>
+		    			<td class="text-large"><strong>125</strong></td>
+		    			<td class="text-large" style="color: #009966;"><strong>-10</strong></td>
+		    		</tr>
+		    	</table>
+		    </div>
+		    <div class="col-md-4" style="border-left: solid 1px #1c2a3b;border-right: solid 1px #1c2a3b;">
+		    	<table width="100%" class="">
+		    		<tr>
+		    			<td width="33%">Aantal risico`s</td>
+		    			<td width="34%">Nieuw</td>
+		    			<td width="33%">Opgelost</td>
+		    		</tr>
+		    		<tr>
+		    			<td class="text-large"><strong>9</strong></td>
+		    			<td class="text-large" style="color: #FF0000;"><strong>+1</strong></td>
+		    			<td class="text-large" style="color: #009966;"><strong>-2</strong></td>
+		    		</tr>
+		    	</table>
+		    </div>
+		    <div class="col-md-3">
+		    	<table width="100%" class="">
+		    		<tr>
+		    			<td width="100%">Hoogste riciso</td>
+		    		</tr>
+		    		<tr>
+		    			<td class="text-large"><strong>135</strong></td>
+		    		</tr>
+		    		<tr>
+		    			<td style="color: #989898;">(Week 12)</td>
+		    		</tr>
+		    	</table>
+		    </div>
+		    <div class="col-md-1">
+		    	<!-- SPACER -->
+		    </div>
+		</div>
+		<div style="clear:both;"></div>
+
+		<div class="row">
+		    <div class="col-md-8">
+		    	
+		    </div>
+		    <div class="col-md-4">
+		    	
+		    </div>
+		</div>
+		<div style="clear:both;"></div>
+
+
+
+		<h2>Planning</h2>
+
+		<div class="row">
+		    <div class="col-md-1">
+		    	<!-- SPACER -->
+		    </div>
+		    <div class="col-md-3">
+		    	<p style="text-align:center;">Realisatie fase</p>
+		    	<p style="text-align:center; color: #009966;"><strong>1,03% voor op schema</strong></p>
+		    </div>
+		    <div class="col-md-4">
+		    	<div id="planning-doughnut" style="height: 300px; width: 100%;"></div>
+		    </div>
+		    <div class="col-md-3">
+		    	<table width="100%" class="">
+		    		<tr>
+		    			<td width="50%">Geplande oplevering</td>
+		    		</tr>
+		    		<tr>
+		    			<td style="text-align:center;"><strong>26 aug 2015</strong></td>
+		    		</tr>
+		    		<tr>
+		    			<td>&nbsp;</td>
+		    		</tr>
+		    		<tr>
+		    			<td width="50%">Obv huidige tempo</td>
+		    		</tr>
+		    		<tr>
+		    			<td style="text-align:center; color: #009966;"><strong>28 aug 2015</strong></td>
+		    		</tr>
+		    	</table>
+		    </div>
+		    <div class="col-md-1">
+		    	<!-- SPACER -->
+		    </div>
+		</div>
+		<div style="clear:both;"></div>
+
+		<h2>Highlights</h2>
+		<p style="text-align:center;">Highlights die niet actueel meer zijn worden de volgende rapportage verwijderd.</p>
+
+		<div class="row">
+			<div class="col-md-1">
+		    	
+		    </div>
+		    <div class="col-md-10">
+		    	<table class="hightlights">
+		    		<tr>
+		    			<th>ID</th>
+		    			<th>Highlight</th>
+		    			<th>Who</th>
+		    			<th>When</th>
+		    		</tr>
+		    		<tr>
+		    			<td><strong>10</strong></td>
+		    			<td style="text-align:left; background-color:#f2f2f2;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus feugiat nisi quis elementum. Duis orci neque, posuere ut ante eu, molestie blandit diam. Vestibulum tempor velit ac pellentesque condimentum.</td>
+		    			<td><strong>eFocus / PON</strong></td>
+		    			<td><strong>11 aug</strong></td>
+		    		</tr>
+		    		<tr>
+		    			<td><strong>11</strong></td>
+		    			<td style="text-align:left; background-color:#f2f2f2;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus feugiat nisi quis elementum. Duis orci neque, posuere ut ante eu, molestie blandit diam. Vestibulum tempor velit ac pellentesque condimentum.</td>
+		    			<td><strong>eFocus / PON</strong></td>
+		    			<td><strong>11 aug</strong></td>
+		    		</tr>
+		    		<tr>
+		    			<td><strong>12</strong></td>
+		    			<td style="text-align:left; background-color:#f2f2f2;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus feugiat nisi quis elementum. Duis orci neque, posuere ut ante eu, molestie blandit diam. Vestibulum tempor velit ac pellentesque condimentum.</td>
+		    			<td><strong>eFocus / PON</strong></td>
+		    			<td><strong>11 aug</strong></td>
+		    		</tr>
+		    		<tr>
+		    			<td><strong>13</strong></td>
+		    			<td style="text-align:left; background-color:#f2f2f2;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus feugiat nisi quis elementum. Duis orci neque, posuere ut ante eu, molestie blandit diam. Vestibulum tempor velit ac pellentesque condimentum.</td>
+		    			<td><strong>eFocus / PON</strong></td>
+		    			<td><strong>11 aug</strong></td>
+		    		</tr>
+
+		    	</table>
+		    </div>
+		    <div class="col-md-1">
+		    	
+		    </div>
+		</div>
+
+		<h2>Actiepunten</h2>
+		<p style="text-align:center;">Actiepunten die niet actueel meer zijn worden de volgende rapportage verwijderd.</p>
+
+		<div class="row">
+			<div class="col-md-1">
+		    	
+		    </div>
+		    <div class="col-md-10">
+		    	<table class="hightlights">
+		    		<tr>
+		    			<th>ID</th>
+		    			<th>Actie</th>
+		    			<th>Prio</th>
+		    			<th>Status</th>
+		    			<th>Wie</th>
+		    			<th>Deadline</th>
+		    		</tr>
+		    		<tr>
+		    			<td><strong>27</strong></td>
+		    			<td style="text-align:left; background-color:#f2f2f2;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus feugiat nisi quis elementum. Duis orci neque, posuere ut ante eu, molestie blandit diam. Vestibulum tempor velit ac pellentesque condimentum.</td>
+		    			<td><strong>HOOG</strong></td>
+		    			<td><strong>Open</strong></td>
+		    			<td><strong>PON</strong></td>
+		    			<td><strong>vr 21 mrt</strong></td>
+		    		</tr>
+		    		<tr>
+		    			<td><strong>29</strong></td>
+		    			<td style="text-align:left; background-color:#f2f2f2;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus feugiat nisi quis elementum. Duis orci neque, posuere ut ante eu, molestie blandit diam. Vestibulum tempor velit ac pellentesque condimentum.</td>
+		    			<td style="text-align:left; background-color:#f2f2f2;"><strong>Middel</strong></td>
+		    			<td style="text-align:left; background-color:#f2f2f2;"><strong>In progress</strong></td>
+		    			<td style="text-align:left; background-color:#f2f2f2;"><strong>eFocus</strong></td>
+		    			<td><strong>vr 21 mrt</strong></td>
+		    		</tr>
+		    		<tr>
+		    			<td><strong>31</strong></td>
+		    			<td style="text-align:left; background-color:#f2f2f2;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus feugiat nisi quis elementum. Duis orci neque, posuere ut ante eu, molestie blandit diam. Vestibulum tempor velit ac pellentesque condimentum.</td>
+		    			<td style="text-align:left; background-color:#f2f2f2;"><strong>Middel</strong></td>
+		    			<td style="text-align:left; background-color:#f2f2f2;"><strong>In progress</strong></td>
+		    			<td style="text-align:left; background-color:#f2f2f2;"><strong>eFocus</strong></td>
+		    			<td><strong>vr 21 mrt</strong></td>
+		    		</tr>
+		    	</table>
+		    	
+		    </div>
+		    <div class="col-md-1">
+		    	
+		    </div>
+		</div>
+		
+
+		
+		<h2>Burndown</h2>
+
+		<div class="row">
+			<div class="col-md-1">
+		    	
+		    </div>
+			<div class="col-md-10">
+		    	<div id="burndown" style="height: 300px; width: 100%;"></div>
+		    </div>
+		    <div class="col-md-1">
+		    	
+		    </div>
+		</div>
+	
+
+		<div class="row" style="visibility:hidden;display:none;">
+		    <div class="col-md-4">
+		    	
+		    	<div id="pie1" style="height: 300px; width: 100%;"></div>
+		    </div>
+		    <div class="col-md-4">
+		    	<div id="pie2" style="height: 300px; width: 100%;"></div>
+		    </div>
+		    <div class="col-md-4">
+		    	<div id="pie3" style="height: 300px; width: 100%;"></div>
+		    </div>
+		</div>
+		<div style="clear:both;"></div>
+
+	</div><!-- END CONTAINER -->
+
+  </body>
+</html>

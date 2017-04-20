@@ -1,0 +1,144 @@
+<html>
+<head>
+	<title>Line Chart</title>
+	<script src="Chart.min.js"></script>
+</head>
+<body>
+	<div style="width:50%">
+			<div>
+				<canvas id="canvas2" height="450" width="600"></canvas>
+			</div>
+		</div>
+
+
+<!--	<script>
+		var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+		var lineChartData = {
+			labels : ["January","February","March","April","May","June","July"],
+			datasets : [
+				{
+					label: "Conversion",
+					fillColor : "rgba(220,220,220,0.2)",
+					strokeColor : "rgba(220,220,220,1)",
+					pointColor : "rgba(220,220,220,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(220,220,220,1)",
+					data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+				},
+				{
+					label: "My Second dataset",
+					fillColor : "rgba(151,187,205,0.2)",
+					strokeColor : "rgba(151,187,205,1)",
+					pointColor : "rgba(151,187,205,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(151,187,205,1)",
+					data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+				}
+			]
+
+		}
+
+	window.onload = function(){
+		var ctx = document.getElementById("canvas").getContext("2d");
+		window.myLine = new Chart(ctx).Line(lineChartData, {
+			responsive: true
+		});
+	}
+	</script>
+
+  -->
+
+  <button onclick="auth();">Authorize</button>
+
+  <script src="https://apis.google.com/js/client.js"></script>
+  <script type="text/javascript">
+
+    request.execute(listGoals);
+
+    function listGoals() {
+      var request = gapi.client.analytics.management.goals.list({
+        'accountId': '2388872',
+        'webPropertyId': 'UA-2388872-1',
+        'profileId': '4430670'
+      });
+      request.execute(printGoals);
+    }
+
+    function printGoals(results) {
+      if (results && !results.error) {
+        var goals = results.items;
+        for (var i = 0, goal; goal = goals[i]; i++) {
+          console.log('Account Id: ' + goal.accountId);
+          console.log('Property Id: ' + goal.webPropertyId);
+          console.log('Internal Property Id: ' + goal.internalWebPropertyId);
+          console.log('View (Profile) Id: ' + goal.profileId);
+
+          console.log('Goal Id: ' + goal.id);
+          console.log('Goal Name: ' + goal.name);
+          console.log('Goal Value: ' + goal.value);
+          console.log('Goal Active: ' + goal.active);
+          console.log('Goal Type: ' + goal.type);
+
+          console.log('Created: ' + goal.created);
+          console.log('Updated: ' + goal.updated);
+
+          // Print the goal details depending on the type of goal.
+          if (goal.urlDestinationDetails) {
+            printDestinationDetails(goal.urlDestinationDetails);
+          } else if (goal.visitTimeOnSiteDetails) {
+            printComparisonDetails(goal.visitTimeOnSiteDetails);
+          } else if (goal.visitNumPagesDetails) {
+            printComparisonDetails(goal.visitNumPagesDetails);
+          } else if (goal.eventDetails) {
+            printEventDetails(goal.eventDetails);
+          }
+        }
+      }
+    }
+
+
+    function printDestinationDetails(details) {
+      console.log('Goal URL: ' + details.url);
+      console.log('Case Sensitive: ' + details.caseSensitive);
+      console.log('Match Type: ' + details.matchType);
+      console.log('First Step Required: ' + details.firstStepRequired);
+
+      // Iterate through the steps.
+      var steps = details.steps;
+      if (steps) {
+        for (var i = 0, step; step = steps[i]; i++) {
+          console.log('Step Number: ' + step.number);
+          console.log('Step Name: ' + step.name);
+          console.log('Step URL: ' + step.url);
+        }
+      } else {
+        console.log('No Steps Configured.');
+      }
+    }
+
+    function printComparisonDetails(details) {
+      console.log('Comparison Type: ' + details.comparisonType);
+      console.log('Comparison Value: ' + details.comparisonValue);
+    }
+
+    function printEventDetails(details) {
+      var conditions = details.eventContitions;
+      if (conditions) {
+        for (var i = 0, condition; condition = conditions[i]; i++) {
+          console.log('Condition Type: ' + condition.type);
+          if (condition.type == 'VALUE') {
+            console.log('Comparison Type: ' + condition.comparisonType);
+            console.log('Comparison Value: ' + condition.comparisonValue);
+          } else {
+            console.log('Match Type: ' + condition.matchType);
+            console.log('Expression: ' + condition.expression);
+          }
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
