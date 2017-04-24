@@ -44,7 +44,7 @@ function GetSentimentScore($text, $lang="en", $unique_id="jmvandeel") {
 
 	    //echo("<pre>"); print_r($response_data); echo("</pre>");
 
-	    echo "<script> console.log('PHP: ',",json_encode($response_data["documents"][0]),");</script>";
+	    //echo "<script> console.log('PHP: ',",json_encode($response_data["documents"][0]),");</script>";
 
 	    return $response_data["documents"][0]["score"];
 	}
@@ -62,6 +62,7 @@ function GetSentimentScore($text, $lang="en", $unique_id="jmvandeel") {
 if( isset($_POST['inputtext']) && isset($_POST['lang']) && isset($_POST['submit']))
 {
 	echo( GetSentimentScore( $_POST['inputtext'], $_POST['lang']) );
+	exit;
 	echo("<hr/>");
 }
 
