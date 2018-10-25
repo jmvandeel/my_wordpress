@@ -6,10 +6,55 @@
 
 <!-- Google Tag Manager Data Layer -->
 <script type="text/javascript">
-	var dataLayer = [{ 
+	var timestamp = Date.now(); console.log("transactionId: " + timestamp);
+    var precision = 100; // 2 decimals
+    var p1 = Math.floor(Math.random() * (10 * precision - 1 * precision) + 1 * precision) / (1*precision); console.log("p1: " + p1);
+    var p2 = Math.floor(Math.random() * (10 * precision - 1 * precision) + 1 * precision) / (1*precision); console.log("p2: " + p2);
+    var q1 = Math.floor(Math.random() * 9) + 1; console.log("q1: " + q1);
+    var q2 = Math.floor(Math.random() * 9) + 1; console.log("q2: " + q2);
+    var subtotal = (p1*q1)+(p2*q2); console.log("subtotal: " + subtotal);
+    var tax = subtotal * 0.15; console.log("tax: " + tax);
+    var total = subtotal + tax; console.log("total: " + total);
+    
+    var dataLayer = [{ 
         "pageTitle":"VANDEEL.com - Data Layer - Order Confirmation",
-        "pageType":"order-confirmation"
+        "pageType":"order-confirmation",
     }];
+    dataLayer.push({
+    'ecommerce': {
+        'purchase': {
+        'actionField': {
+            'id': timestamp,                        // Transaction ID. Required for purchases and refunds.
+            'affiliation': 'vandeel.com',
+            'revenue': total,                       // Total transaction value (incl. tax and shipping)
+            'tax': tax,
+            'shipping': '5.99',
+            'coupon': 'SUMMER_SALE'
+        },
+        'products': [{                             // List of productFieldObjects.
+            'name': 'productname-'+q1,              // Name or ID is required.
+            'id': 'sku-'+q1,
+            'price': p1,
+            'brand': 'Google',
+            'category': 'Apparel',
+            'variant': 'Gray',
+            'quantity': q1,
+            'coupon': ''                            // Optional fields may be omitted or set to empty string.
+        },
+        {
+            'name': 'productname-'+q2,
+            'id': 'sku-'+q2,
+            'price': p2,
+            'brand': 'Google',
+            'category': 'Apparel',
+            'variant': 'Black',
+            'quantity': q2,
+            'coupon': '' 
+        }]
+        }
+    },
+    'event' : 'transaction'
+    });
 </script>
 <!-- End Google Tag Manager Data Layer -->
 

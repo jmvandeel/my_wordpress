@@ -2,3 +2,4 @@ wp-config.php
 */cache/*
 */debug.log
 */error.log
+.DS_Store
